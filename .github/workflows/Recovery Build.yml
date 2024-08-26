@@ -125,7 +125,6 @@ jobs:
         chmod +x ./${{ github.event.inputs.DEVICE_PATH }}/vendorsetup.sh
         source ./${{ github.event.inputs.DEVICE_PATH }}/vendorsetup.sh
         chmod +x ./${{ github.event.inputs.DEVICE_PATH }}/recovery/root/system/bin/*
-        cp -rf ./${{ github.event.inputs.DEVICE_PATH }}/docs/changelog.txt ${{ steps.pwd.outputs.workspace-folder }}/fox_${{ github.event.inputs.MANIFEST_BRANCH }}/vendor/recovery/Files/changelog.txt
       working-directory: ${{ steps.pwd.outputs.workspace-folder }}
 
     - name: Clone common tree
@@ -159,7 +158,6 @@ jobs:
     - name: Building recovery
       run: |
         source build/envsetup.sh
-        export ALLOW_MISSING_DEPENDENCIES=true
         lunch ${{ github.event.inputs.MAKEFILE_NAME }}-eng && make clean && make ${{ github.event.inputs.BUILD_TARGET }}image -j$(nproc --all)
       working-directory: ${{ steps.pwd.outputs.workspace-folder }}
 
