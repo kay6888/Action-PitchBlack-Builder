@@ -14,11 +14,11 @@ on:
       DEVICE_TREE_URL:
         description: 'DEVICE_TREE_URL'
         required: true
-        default: 'https://github.com/kay6888/device_motorola_fogo.git'
+        default: 'https://github.com/kay6888/device_motorola_fogo'
       DEVICE_TREE_BRANCH:
         description: 'DEVICE_TREE_BRANCH'
         required: true
-        default: 'multidisabler-add'
+        default: 'android-12.1'
       DEVICE_PATH:
         description: 'DEVICE PATH'
         required: true
